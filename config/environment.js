@@ -26,7 +26,10 @@ module.exports = function (environment) {
     blog: {
       title: "JC Web Concepts",
       description: "Custom Web Development",
+      logo: "/images/logo.png",
+      rssLogo: "/images/logo.png",
       coverImage: "/images/blog-cover.jpg",
+      twitter: "jroc2004",
 
       navigation: [
         {
