@@ -36,6 +36,11 @@ module.exports = function (environment) {
           label: "Home",
           route: "index",
         },
+        {
+          label: "Uses",
+          route: "page",
+          id: "what-i-use",
+        },
       ],
     },
 
