@@ -47,7 +47,7 @@
     "ember-responsive-image": "^2.0.0",
     "ember-showdown-prism": "^2.2.0",
     "ember-source": "~3.27.0",
-    "ember-template-lint": "^3.3.1",
+    "ember-template-lint": "^3.4.1",
     "empress-blog": "^3.2.0",
     "empress-blog-casper-template": "^3.3.0",
     "eslint": "^7.25.0",
