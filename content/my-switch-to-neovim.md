@@ -1,6 +1,6 @@
 ---
 title: "My Switch to Neovim"
-image: /images/neovim.jpg
+#image: /images/neovim.jpg
 authors:
   - jrock2004
 date: "2017-06-21"

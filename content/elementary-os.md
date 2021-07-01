@@ -1,6 +1,6 @@
 ---
 title: "Elementary OS"
-image: /images/elem-os-terminal.jpg
+#image: /images/elem-os-terminal.jpg
 authors:
   - jrock2004
 date: "2016-11-04"

@@ -1,6 +1,6 @@
 ---
 title: "Using Docker at Work for Local Development"
-image: /images/docker.jpg
+#image: /images/docker.jpg
 imageMeta:
   attribution: Docker whale
 authors:

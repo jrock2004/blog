@@ -1,11 +1,11 @@
 ---
 title: New Provider
-image: /images/new-provider.jpg
+#image: /images/new-provider.jpg
 imageMeta:
   attribution:
   attributionLink:
 featured: false
-authors: 
+authors:
   - jrock2004
 date: Fri Aug 28 2020 20:12:38 GMT-0400 (Eastern Daylight Time)
 tags:
