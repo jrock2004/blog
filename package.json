@@ -59,7 +59,7 @@
     "prember": "^1.0.5",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "webpack": "^5.42.1"
+    "webpack": "^5.43.0"
   },
   "engines": {
     "node": "10.* || >= 12"
