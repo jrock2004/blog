@@ -31,3 +31,15 @@ body,
   @apply mb-4;
   @apply pl-4;
 }
+
+.blog-post-content h2 {
+  @apply text-2xl;
+  @apply font-semibold;
+  @apply mb-4;
+}
+
+.blog-post-content h3 {
+  @apply text-xl;
+  @apply font-semibold;
+  @apply mb-4;
+}
