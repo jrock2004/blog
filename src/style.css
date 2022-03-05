@@ -25,3 +25,9 @@ body,
   @apply text-teal-500;
   @apply hover:text-teal-400;
 }
+
+.blog-post-content ul {
+  @apply list-disc;
+  @apply mb-4;
+  @apply pl-4;
+}
