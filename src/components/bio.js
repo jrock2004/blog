@@ -31,22 +31,25 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <div className="flex gap-6 mb-6 border-b pb-4 items-center">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
+        src="../images/mimoji-laptop.png"
+        width={80}
+        height={80}
         quality={95}
-        alt="Profile picture"
+        alt="John Costanzo mimoji holding a laptop"
       />
       {author?.name && (
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
+          <a
+            className="text-teal-600 hover:text-teal-500"
+            href={`https://twitter.com/${social?.twitter || ``}`}
+          >
             You should follow them on Twitter
           </a>
         </p>
