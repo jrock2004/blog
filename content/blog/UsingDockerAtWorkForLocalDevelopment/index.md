@@ -40,7 +40,7 @@ CMD ["/entrypoint.sh"]
 
 This will create a NodeJS image that has bower, yarn, and EmberJS. Now we are ready to build our _docker-compose.yml_ file.
 
-```dockerfile
+```yaml
 version: '3'
 
 volumes:
