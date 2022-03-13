@@ -3,14 +3,16 @@
 echo "What is the title of your post? "
 read title
 
-dir_name=$(echo $title | sed 's/ //')
+dir_name=$(echo $title | sed 's/ //g')
+full_dir_name="content/blog/$dir_name"
+file_name="$full_dir_name/index.md"
 
 if [ -d "$dir_name" ]; then
   echo "Directory $dir_name already exists"
 
   exit 1
 else
-  mkdir ./content/blog/$dir_name
+  mkdir "$full_dir_name"
 fi
 
 printf "What tags would you like to add? (separate with commas): \n"
@@ -24,23 +26,23 @@ fi
 
 current_date=$(date +%Y-%m-%d)
 
-touch ./content/blog/$dir_name/index.md
-echo "---" >> ./content/blog/$dir_name/index.md
-echo "title: $title" >> ./content/blog/$dir_name/index.md
-echo "date: $current_date" >> ./content/blog/$dir_name/index.md
+touch "$file_name"
+echo "---" >> "$file_name"
+echo "title: $title" >> "$file_name"
+echo "date: $current_date" >> "$file_name"
 
 if [ "$tags" != "" ]
 then
-  echo "tags:" >> ./content/blog/$dir_name/index.md
+  echo "tags:" >> "$file_name"
 
   IFS=","
   for tag in $tags
   do
-    printf "\t- $tag\n" >> ./content/blog/$dir_name/index.md
+    printf "\t- $tag\n" >> "$file_name"
   done
 fi
 
-echo "---" >> ./content/blog/$dir_name/index.md
-printf "\n" >> ./content/blog/$dir_name/index.md
+echo "---" >> "$file_name"
+printf "\n" >> "$file_name"
 
 printf "Created new post: $title successfully \n"
