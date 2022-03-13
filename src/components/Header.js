@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import { Nav } from "./Nav"
+import Nav from "./nav"
 
 export const Header = ({ activePath, title }) => {
   return (
