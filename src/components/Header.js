@@ -17,3 +17,5 @@ export const Header = ({ activePath, title }) => {
     </header>
   )
 }
+
+export default Header

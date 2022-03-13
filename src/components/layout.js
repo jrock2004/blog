@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Header } from "./header"
+import Header from "./Header"
 import Bio from "./bio"
 
 const Layout = ({ location, title, children }) => {
