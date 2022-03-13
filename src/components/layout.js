@@ -12,14 +12,14 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div
-      className="antialiased text-slate-700 font-primary h-full outer-container box-border w-full"
+      className="antialiased text-slate-700 font-primary h-full outer-container box-border w-full flex flex-col"
       data-is-root-path={isRootPath}
     >
       <header className="bg-slate-50 px-8 py-4 box-border shadow-md w-full md:py-6">
         {header}
       </header>
       <main className="flex items-center justify-center pt-12">{children}</main>
-      <footer className="bg-slate-700 text-white px-8 py-4 hidden md:block">
+      <footer className="bg-slate-700 text-white px-8 py-4 hidden mt-auto md:block">
         JC Web Concepts © {new Date().getFullYear()}
       </footer>
     </div>
