@@ -9,9 +9,9 @@ body,
   height: 100%;
 }
 
-.outer-container {
-  grid-template-rows: auto 1fr auto;
-}
+/* .outer-container { */
+/*   grid-template-rows: auto 1fr auto; */
+/* } */
 
 .gatsby-highlight {
   @apply mb-6;

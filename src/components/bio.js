@@ -33,7 +33,7 @@ const Bio = () => {
   return (
     <div className="flex gap-6 mb-6 border-b pb-4 items-center">
       <StaticImage
-        className="bio-avatar"
+        className="bio-avatar hidden md:block"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/mimoji-laptop.png"
@@ -50,7 +50,7 @@ const Bio = () => {
             className="text-teal-600 hover:text-teal-500"
             href={`https://twitter.com/${social?.twitter || ``}`}
           >
-            You should follow them on Twitter
+            You should follow me on Twitter
           </a>
         </p>
       )}
