@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Bio from "../components/bio"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -19,22 +20,24 @@ const BlogPostTemplate = ({ data, location }) => {
       />
       <div>
         <article
-          className="blog-post flex flex-col px-5 max-w-3xl"
+          className="w-full blog-post flex flex-col px-5 max-w-4xl"
           itemScope
           itemType="http://schema.org/Article"
         >
-          <header className="mb-5">
+          <header className="mb-3 text-center">
+            <h1 className="text-4xl font-bold mb-3" itemProp="headline">
+              {post.frontmatter.title}
+            </h1>
+            <p className="text-xs text-gray-500 mb-10">
+              {post.frontmatter.date}
+            </p>
             {image && (
               <Img
                 fluid={image.childImageSharp.fluid}
-                className="w-full object-cover mb-6"
+                className="w-full object-cover mb-6 md:h-72"
                 alt={post.frontmatter.title}
               />
             )}
-            <h1 className="text-3xl font-semibold" itemProp="headline">
-              {post.frontmatter.title}
-            </h1>
-            <p className="text-sm text-gray-500">{post.frontmatter.date}</p>
           </header>
           <section
             className="blog-post-content text-xl pb-10"
@@ -42,8 +45,11 @@ const BlogPostTemplate = ({ data, location }) => {
             itemProp="articleBody"
           />
         </article>
-        <nav className="blog-post-nav px-5 mt-5">
-          <ul className="flex flex-col gap-6 items-center mb-20 md:flex-row md:justify-between">
+        <div className="flex justify-center">
+          <Bio />
+        </div>
+        <nav className="blog-post-nav px-5 mt-20">
+          <ul className="flex flex-col gap-6 items-center mb-20 md:flex-row md:justify-around">
             <li>
               {previous && (
                 <Link className="text-xl" to={previous.fields.slug} rel="prev">
