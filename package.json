@@ -27,7 +27,7 @@
     "gatsby-remark-smartypants": "^5.9.0",
     "gatsby-source-filesystem": "^4.9.1",
     "gatsby-transformer-remark": "^5.9.1",
-    "gatsby-transformer-sharp": "^4.9.0",
+    "gatsby-transformer-sharp": "^4.10.0",
     "postcss": "^8.4.8",
     "prismjs": "^1.27.0",
     "react": "^17.0.1",
@@ -38,7 +38,7 @@
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
