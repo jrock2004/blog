@@ -11,7 +11,7 @@
     "autoprefixer": "^10.4.4",
     "gatsby": "^4.10.1",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-feed": "^4.10.1",
+    "gatsby-plugin-feed": "^4.10.2",
     "gatsby-plugin-gatsby-cloud": "^4.10.0",
     "gatsby-plugin-google-analytics": "^4.10.0",
     "gatsby-plugin-image": "^2.10.0",
