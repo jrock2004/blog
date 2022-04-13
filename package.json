@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.4",
-    "gatsby": "^4.11.2",
+    "gatsby": "^4.12.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-feed": "^4.11.1",
     "gatsby-plugin-gatsby-cloud": "^4.11.1",
