@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -43,11 +43,10 @@ const BlogIndex = ({ data, location }) => {
                   itemType="http://schema.org/Article"
                 >
                   {image && (
-                    <Img
-                      fluid={image.childImageSharp.fluid}
+                    <GatsbyImage
+                      image={image.childImageSharp.gatsbyImageData}
                       className="w-full object-cover mb-4 mr-3 md:w-96 md:mb-0"
-                      alt={title}
-                    />
+                      alt={title} />
                   )}
                   <div>
                     <div className="flex flex-col text-gray-400 text-sm">
@@ -90,44 +89,45 @@ const BlogIndex = ({ data, location }) => {
                   </div>
                 </article>
               </li>
-            )
+            );
           })}
         </ol>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default BlogIndex
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`{
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tags
-          image {
-            childImageSharp {
-              fluid(fit: COVER, maxWidth: 800) {
-                aspectRatio
-                ...GatsbyImageSharpFluid
-              }
-            }
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    nodes {
+      excerpt
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        tags
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 800
+              placeholder: BLURRED
+              transformOptions: {fit: COVER}
+              layout: CONSTRAINED
+            )
           }
         }
       }
     }
   }
+}
 `

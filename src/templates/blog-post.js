@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -32,11 +32,10 @@ const BlogPostTemplate = ({ data, location }) => {
               {post.frontmatter.date}
             </p>
             {image && (
-              <Img
-                fluid={image.childImageSharp.fluid}
+              <GatsbyImage
+                image={image.childImageSharp.gatsbyImageData}
                 className="w-full object-cover mb-6 md:h-72"
-                alt={post.frontmatter.title}
-              />
+                alt={post.frontmatter.title} />
             )}
           </header>
           <section
@@ -68,55 +67,52 @@ const BlogPostTemplate = ({ data, location }) => {
         </nav>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
+  site {
+    siteMetadata {
+      title
     }
-    markdownRemark(id: { eq: $id }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-        image {
-          childImageSharp {
-            fluid(fit: COVER, maxWidth: 800) {
-              aspectRatio
-              ...GatsbyImageSharpFluid
-            }
-          }
+  }
+  markdownRemark(id: {eq: $id}) {
+    id
+    excerpt(pruneLength: 160)
+    html
+    frontmatter {
+      title
+      date(formatString: "MMMM DD, YYYY")
+      description
+      image {
+        childImageSharp {
+          gatsbyImageData(
+            width: 800
+            placeholder: BLURRED
+            transformOptions: {fit: COVER}
+            layout: CONSTRAINED
+          )
         }
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+  }
+  previous: markdownRemark(id: {eq: $previousPostId}) {
+    fields {
+      slug
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+    frontmatter {
+      title
     }
   }
+  next: markdownRemark(id: {eq: $nextPostId}) {
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+    }
+  }
+}
 `
