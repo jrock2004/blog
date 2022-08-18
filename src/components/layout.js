@@ -13,7 +13,7 @@ const Layout = ({ location, title, children }) => {
         data-is-root-path={isRootPath}
       >
         <Header activePath={location.pathname} title={title} />
-        <main className="overflow-y-scroll">{children}</main>
+        <main className="px-20 py-7 overflow-y-scroll">{children}</main>
       </div>
     </div>
   )
