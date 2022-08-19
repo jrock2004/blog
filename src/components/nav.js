@@ -20,6 +20,18 @@ export const Nav = ({ activePath }) => {
         <li>
           <Link
             className={`px-3 py-2 block w-full ${
+              activePath === "/all-posts"
+                ? "bg-amber-800 hover:opacity-90"
+                : "text-white hover:opacity-50"
+            }`}
+            to="/all-posts"
+          >
+            All Posts
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={`px-3 py-2 block w-full ${
               activePath === "/what-i-use"
                 ? "bg-amber-800 hover:opacity-90"
                 : "text-white hover:opacity-50"
