@@ -11,7 +11,7 @@ const WhatIUse = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="What I Use" />
 
-      <div className="px-5 max-w-4xl md:px-8">
+      <div className="px-5 max-w-4xl md:px-8 dark:text-white">
         <h2 className="text-5xl font-semibold mb-8">What I Use</h2>
         <p className="mb-6">
           I might be doing a demo or training and I will get the question of,

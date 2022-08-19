@@ -1,10 +1,9 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Bio from "../components/bio"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -20,7 +19,7 @@ const BlogPostTemplate = ({ data, location }) => {
       />
       <div>
         <article
-          className="w-full blog-post flex flex-col px-5 max-w-4xl"
+          className="w-full text-slate-900 blog-post flex flex-col px-5 max-w-4xl dark:text-white"
           itemScope
           itemType="http://schema.org/Article"
         >
@@ -28,14 +27,15 @@ const BlogPostTemplate = ({ data, location }) => {
             <h1 className="text-4xl font-bold mb-3" itemProp="headline">
               {post.frontmatter.title}
             </h1>
-            <p className="text-xs text-gray-500 mb-10">
+            <p className="text-xs text-red-500 mb-10">
               {post.frontmatter.date}
             </p>
             {image && (
               <GatsbyImage
                 image={image.childImageSharp.gatsbyImageData}
                 className="w-full object-cover mb-6 md:h-72"
-                alt={post.frontmatter.title} />
+                alt={post.frontmatter.title}
+              />
             )}
           </header>
           <section
@@ -44,21 +44,26 @@ const BlogPostTemplate = ({ data, location }) => {
             itemProp="articleBody"
           />
         </article>
-        <div className="flex justify-center">
-          <Bio />
-        </div>
         <nav className="blog-post-nav px-5 mt-20">
           <ul className="flex flex-col gap-6 items-center mb-20 md:flex-row md:justify-around">
             <li>
               {previous && (
-                <Link className="text-xl" to={previous.fields.slug} rel="prev">
+                <Link
+                  className="text-xl text-amber-800"
+                  to={previous.fields.slug}
+                  rel="prev"
+                >
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link className="text-xl" to={next.fields.slug} rel="next">
+                <Link
+                  className="text-xl text-amber-800"
+                  to={next.fields.slug}
+                  rel="next"
+                >
                   {next.frontmatter.title} →
                 </Link>
               )}
@@ -67,52 +72,57 @@ const BlogPostTemplate = ({ data, location }) => {
         </nav>
       </div>
     </Layout>
-  );
+  )
 }
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
-  site {
-    siteMetadata {
-      title
+export const pageQuery = graphql`
+  query BlogPostBySlug(
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
+    site {
+      siteMetadata {
+        title
+      }
     }
-  }
-  markdownRemark(id: {eq: $id}) {
-    id
-    excerpt(pruneLength: 160)
-    html
-    frontmatter {
-      title
-      date(formatString: "MMMM DD, YYYY")
-      description
-      image {
-        childImageSharp {
-          gatsbyImageData(
-            width: 800
-            placeholder: BLURRED
-            transformOptions: {fit: COVER}
-            layout: CONSTRAINED
-          )
+    markdownRemark(id: { eq: $id }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 800
+              placeholder: BLURRED
+              transformOptions: { fit: COVER }
+              layout: CONSTRAINED
+            )
+          }
         }
       }
     }
+    previous: markdownRemark(id: { eq: $previousPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    next: markdownRemark(id: { eq: $nextPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
   }
-  previous: markdownRemark(id: {eq: $previousPostId}) {
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-    }
-  }
-  next: markdownRemark(id: {eq: $nextPostId}) {
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-    }
-  }
-}
 `

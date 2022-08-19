@@ -6,16 +6,16 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const BlogAllPosts = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="Recent posts" />
+        <Seo title="All posts" />
         <Bio />
-        <p className="text-black dark:text-white">
+        <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
@@ -26,9 +26,9 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Recent posts" />
-      <h2 className="text-3xl text-slate-900 border-b mb-10 pb-3 font-semibold dark:text-white">
-        Recent posts
+      <Seo title="All posts" />
+      <h2 className="text-3xl text-stone-900 border-b mb-10 pb-3 font-semibold dark:white">
+        All posts
       </h2>
       {/* <Bio /> */}
       <ol className="list-none flex flex-col gap-8 box-border">
@@ -40,7 +40,7 @@ const BlogIndex = ({ data, location }) => {
           return (
             <li
               key={post.fields.slug}
-              className="text-slate-900 mb-14 border shadow p-4 dark:text-white dark:border-none dark:p-0"
+              className="text-stone-900 dark:text-white"
             >
               <article
                 className="flex flex-col box-border w-full md:flex-row"
@@ -102,7 +102,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default BlogAllPosts
 
 export const pageQuery = graphql`
   {
@@ -111,10 +111,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 10
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
