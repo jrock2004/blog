@@ -27,8 +27,8 @@ const BlogAllPosts = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <h2 className="text-3xl text-white border-b mb-10 pb-3 font-semibold">
-        Recent posts
+      <h2 className="text-3xl text-stone-900 border-b mb-10 pb-3 font-semibold dark:white">
+        All posts
       </h2>
       {/* <Bio /> */}
       <ol className="list-none flex flex-col gap-8 box-border">
@@ -38,7 +38,10 @@ const BlogAllPosts = ({ data, location }) => {
           const image = post.frontmatter.image
 
           return (
-            <li key={post.fields.slug} className="text-white">
+            <li
+              key={post.fields.slug}
+              className="text-stone-900 dark:text-white"
+            >
               <article
                 className="flex flex-col box-border w-full md:flex-row"
                 itemScope
