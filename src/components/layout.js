@@ -7,7 +7,7 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
 
   return (
-    <div className="dark h-full">
+    <div className="h-full">
       <div
         className="antialiased text-slate-700 font-primary min-h-full outer-container box-border w-full bg-white flex flex-col lg:flex-row dark:bg-stone-900"
         data-is-root-path={isRootPath}

@@ -15,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <Seo title="Recent posts" />
         <Bio />
-        <p>
+        <p className="text-black dark:text-white">
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
@@ -27,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="Recent posts" />
-      <h2 className="text-3xl text-white border-b mb-10 pb-3 font-semibold">
+      <h2 className="text-3xl text-slate-900 border-b mb-10 pb-3 font-semibold dark:text-white">
         Recent posts
       </h2>
       {/* <Bio /> */}
@@ -38,7 +38,10 @@ const BlogIndex = ({ data, location }) => {
           const image = post.frontmatter.image
 
           return (
-            <li key={post.fields.slug} className="text-white">
+            <li
+              key={post.fields.slug}
+              className="text-slate-900 mb-14 border shadow p-4 dark:text-white dark:border-none dark:p-0"
+            >
               <article
                 className="flex flex-col box-border w-full md:flex-row"
                 itemScope

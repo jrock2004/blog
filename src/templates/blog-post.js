@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, location }) => {
       />
       <div>
         <article
-          className="w-full text-white blog-post flex flex-col px-5 max-w-4xl"
+          className="w-full text-slate-900 blog-post flex flex-col px-5 max-w-4xl dark:text-white"
           itemScope
           itemType="http://schema.org/Article"
         >
