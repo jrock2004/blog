@@ -8,7 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.11",
     "gatsby": "^4.22.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-feed": "^4.22.0",
