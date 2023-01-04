@@ -1,0 +1,36 @@
+---
+import Hamburger from "./Hamburger.astro";
+import NavLink from "./NavLink.astro";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header class="border-b shadow-sm flex px-6 py-4 items-center">
+  <h1 class="text-3xl">JC Web Concepts</h1>
+  <Hamburger />
+  <nav
+    class="nav hidden absolute bg-white top-16 left-0 right-0 bottom-0 dark:bg-slate-800 md:relative md:inset-0 md:ml-auto md:block"
+  >
+    <ul class="flex flex-col text-center py-6 md:py-0 md:flex-row">
+      <NavLink href="/" isActive={currentPath === ""}>Home</NavLink>
+      <NavLink href="/blog" isActive={currentPath.includes("blog")}>
+        Articles
+      </NavLink>
+      <NavLink href="/what-i-use" isActive={currentPath === "what-i-use"}>
+        What I Use
+      </NavLink>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const hamburger = document.querySelector(".menu-icon");
+  const nav = document.querySelector(".nav");
+
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("hidden");
+    });
+  }
+</script>
