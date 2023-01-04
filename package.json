@@ -3,7 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "private": false,
-  "author": "John Costanzo<jrock2004>""bugs": {
+  "author": "John Costanzo<jrock2004>",
+  "bugs": {
     "url": "https://github.com/jrock2004/blog/issues"
   },
   "homepage": "https://jcwebconcepts.net",
