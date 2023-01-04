@@ -30,7 +30,7 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 const App = (): ReactElement => {
     return (
         <div>
-            <h1>Hello World</h1>
+            <h1>Hello World!</h1>
         </div>
     );
 }
