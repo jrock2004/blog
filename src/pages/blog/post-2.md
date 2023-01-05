@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: 'My First Blog Post'
-date: 2022-07-01
+title: 'My Original Blog Post'
+date: 2024-07-01
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-Published on: 2022-07-01
+Published on: 2020-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 

@@ -7,7 +7,6 @@ export interface Props {
 const { href, isActive } = Astro.props;
 ---
 
-<a
-  class={`py-3 ${isActive ? "font-semibold" : "font-normal"} md:pl-6`}
-  href={href}><slot /></a
+<a class={`p-3 ${isActive ? 'font-semibold' : 'font-normal'} hover:bg-gray-100`} href={href}
+  ><slot /></a
 >

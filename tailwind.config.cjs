@@ -7,6 +7,9 @@ module.exports = {
       colors: {
         'primary': '#d19a66',
       },
+      fontFamily: {
+        'main': '"Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif'
+      }
     },
     plugins: [],
   }

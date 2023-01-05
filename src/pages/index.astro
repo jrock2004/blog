@@ -1,12 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import AboutHero from '../components/AboutHero.astro';
+import FeaturePosts from '../components/FeaturePosts.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
-  <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-  <p class="instructions">
-    To get started, open the directory <code>src/pages</code> in your project.<br
-    />
-    <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-  </p>
+  <AboutHero />
+  <FeaturePosts count={3} />
 </Layout>
