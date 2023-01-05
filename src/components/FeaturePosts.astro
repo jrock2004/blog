@@ -20,8 +20,8 @@ const { count } = Astro.props;
         const title = post.frontmatter.title;
         const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('en-US', {
           year: 'numeric',
-          month: 'long',
-          day: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
         });
 
         return (
@@ -29,8 +29,11 @@ const { count } = Astro.props;
             href={post.url}
             class="border-b py-4 px-1 flex hover:shadow-lg transition-all ease-in-out"
           >
-            <div>
-              <h3 class="text-lg mb-1">{title}</h3>
+            <div class="w-full">
+              <div class="flex flex-row mb-2">
+                <h3 class="text-lg mb-1">{title}</h3>
+                <p class="ml-auto">{formattedDate}</p>
+              </div>
               <div>
                 {post.frontmatter.tags.length > 0 && (
                   <div class="flex flex-wrap space-x-1">
@@ -41,7 +44,6 @@ const { count } = Astro.props;
                 )}
               </div>
             </div>
-            <p class="ml-auto">{formattedDate}</p>
           </a>
         );
       })
