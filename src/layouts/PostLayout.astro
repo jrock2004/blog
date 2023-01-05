@@ -1,6 +1,8 @@
 ---
-import Header from "../components/Header.astro";
+import Header from '../components/Header.astro';
 const { frontmatter } = Astro.props;
+
+import '../markdown.css';
 ---
 
 <!DOCTYPE html>
@@ -12,11 +14,10 @@ const { frontmatter } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>JC Web Concepts - {frontmatter.title}</title>
   </head>
-  <body
-    class="antialiased bg-white text-slate-700 h-full dark:bg-slate-800 dark:text-white"
-  >
+  <body class="antialiased bg-white text-slate-700 h-full dark:bg-slate-800 dark:text-white">
     <Header />
-    <main class="p-6">
+    <main class="p-6 blog-post-content">
+      <h2>{frontmatter.title}</h2>
       <slot />
     </main>
   </body>
