@@ -14,7 +14,7 @@ const { count } = Astro.props;
 
 <div>
   <h2 class="font-semibold text-xl mb-4">Latest Posts</h2>
-  <div class="flex flex-col max-w-2xl mx-auto">
+  <div class="flex flex-col mx-auto">
     {
       allPosts.slice(0, count).map((post: any) => {
         const title = post.frontmatter.title;
@@ -25,8 +25,22 @@ const { count } = Astro.props;
         });
 
         return (
-          <a href={post.url} class="border-b py-4 px-1 flex hover:shadow-lg">
-            <h3 class="text-lg">{title}</h3>
+          <a
+            href={post.url}
+            class="border-b py-4 px-1 flex hover:shadow-lg transition-all ease-in-out"
+          >
+            <div>
+              <h3 class="text-lg mb-1">{title}</h3>
+              <div>
+                {post.frontmatter.tags.length > 0 && (
+                  <div class="flex flex-wrap space-x-1">
+                    {post.frontmatter.tags.map((tag: string) => (
+                      <span class="text-xs border rounded-md px-4 py-1">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
             <p class="ml-auto">{formattedDate}</p>
           </a>
         );
