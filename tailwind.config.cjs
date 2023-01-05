@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#d19a66',
+        'primary': 'rgb(166, 81, 0)',
+        'primaryDark': '#d19a66',
       },
       fontFamily: {
         'main': '"Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif'

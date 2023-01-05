@@ -1,7 +1,92 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Link from '../components/Link.astro';
+import WhatIUseSection from '../components/WhatIUseSection.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="What I Use">
-  <h1>What I use</h1>
+  <div class="px-5 max-w-4xl md:px-8 dark:text-white">
+    <h2 class="text-5xl font-semibold mb-8">What I Use</h2>
+    <p class="mb-6">
+      I might be doing a demo or training and I will get the question of, what do I use. So this
+      page is going to be the place I can point people to see what I am using and where to get it.
+    </p>
+
+    <WhatIUseSection title="Editor + Terminal + Fonts">
+      <li class="mb-1">
+        <Link to="https://neovim.io">Neovim</Link> is the main editor I use on a daily basis.
+      </li>
+      <li class="mb-1">
+        <Link to="https://code.visualstudio.com">Visual Studio Code</Link> is the editor I use for solving
+        merge conflicts.
+      </li>
+      <li class="mb-1">
+        <Link to="https://sw.kovidgoyal.net/kitty/index.html">Kitty</Link> is the main terminal I use.
+      </li>
+      <li class="mb-1">
+        <Link to="https://www.fonts.com/font/tabular-type-foundry/comic-code/ligatures-family">
+          Comic Code
+        </Link> is the main font I use for developing.
+      </li>
+    </WhatIUseSection>
+
+    <WhatIUseSection title="Desktop Apps">
+      <li class="mb-1">
+        <Link to="https://www.alfredapp.com">Alfred</Link> is my current app launcher.
+      </li>
+      <li class="mb-1">
+        <Link to="https://1password.com">1Password</Link> is my current password manager.
+      </li>
+      <li class="mb-1">
+        <Link to="https://www.apple.com/safari/">Safari</Link> and
+        <Link to="https://www.mozilla.org/en-US/firefox/">Firefox</Link> are my current browsers.
+      </li>
+      <li class="mb-1">
+        <Link to="https://apps.apple.com/us/app/drafts/id1435957248?mt=12">Drafts</Link> is used for
+        writing quick notes.
+      </li>
+      <li class="mb-1">
+        <Link to="https://dayoneapp.com">Day One</Link> is what I use to journal.
+      </li>
+    </WhatIUseSection>
+
+    <WhatIUseSection title="Desk Setup">
+      <li class="mb-1">
+        <Link to="https://www.autonomous.ai/standing-desks/smartdesk-2-home">SmartDesk 2</Link> is the
+        standing desk I use.
+      </li>
+      <li class="mb-1">
+        The computer I am using on my desk is the 2020 M1 Mac Mini".
+        <ul class="list-disc ml-8">
+          <li class="mb-1">16 GB of RAM</li>
+          <li class="mb-1">500 GB of Storage</li>
+        </ul>
+      </li>
+      <li class="mb-1">
+        <Link to="https://www.caldigit.com/thunderbolt-station-4/">CalDigit TS4</Link> is the dock I
+        use.
+      </li>
+      <li class="mb-1">
+        <Link
+          to="https://www.keychron.com/products/keychron-k4-wireless-mechanical-keyboard-version-2"
+        >
+          Keychron K4 Wireless
+        </Link> is my current keyboard.
+      </li>
+      <li class="mb-1">
+        <Link
+          to="https://www.amazon.com/Logitech-MX-Master-3S-Graphite/dp/B09HM94VDS/ref=sr_1_1_sspa?keywords=logitech%2Bmx%2Bmaster%2B3s&qid=1672957083&sprefix=logitech%2Bmx%2Bmast%2Caps%2C89&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEySkEzTUJQMDBISVVNJmVuY3J5cHRlZElkPUEwOTI4NTA5M0xCVExGTUY5NTcxSSZlbmNyeXB0ZWRBZElkPUEwMzk5NTk3MkZBMlRYUE0wUUc3ViZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1"
+        >
+          Logitech MX Master 3S
+        </Link> is my current mouse.
+      </li>
+      <li class="mb-1">
+        <Link
+          to="https://www.amazon.com/gp/product/B07ZPC2FMQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
+        >
+          Audio-Technica ATR2500x
+        </Link> is my microphone.
+      </li>
+    </WhatIUseSection>
+  </div>
 </Layout>
