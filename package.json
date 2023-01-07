@@ -14,7 +14,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "create-post": "./scripts/create-post.sh"
+    "create-post": ".scripts/create-post.sh"
   },
   "dependencies": {
     "@astrojs/tailwind": "^2.1.3",
