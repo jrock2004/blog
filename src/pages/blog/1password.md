@@ -2,9 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: "1Password"
 date: "2010-02-15"
-tags:
-  - apple
-  - windows
+tags: ["apple", "windows"]
 ---
 
 One of the things that people talk about in the computer world is password strength. They talk about how you should not use the same passwords for everything. They say you should not use your kids names, date of birth, social security number, etc… Some people I know make 2 passwords. They make a real tough one for important sites like banking and credit cards. They use the other one for sites they do not care about like forums.

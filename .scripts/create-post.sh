@@ -26,22 +26,17 @@ current_date=$(date +%Y-%m-%d)
 touch "$file_name"
 echo "---" >> "$file_name"
 echo "layout: ../../layouts/PostLayout.astro" >> "$file_name"
-echo "title: $title" >> "$file_name"
-echo "date: $current_date" >> "$file_name"
+echo "title: \"$title\"" >> "$file_name"
+echo "date: \"$current_date\"" >> "$file_name"
+echo "image:" >> "$file_name"
 
 if [ "$tags" != "" ]
 then
-  echo "tags:" >> "$file_name"
+  echo "tags: [${tags//,/, }]" >> "$file_name"
 
-  IFS=","
-  for tag in $tags
-  do
-    printf "\t- $tag\n" >> "$file_name"
-  done
 fi
-
 echo "---" >> "$file_name"
-printf "\n" >> "$file_name"
+printf "\n\n" >> "$file_name"
 
 printf "Created new post: $title successfully \n"
 
