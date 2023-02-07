@@ -1,0 +1,12 @@
+---
+export interface Props {
+  href: string;
+  isActive: boolean;
+}
+
+const { href, isActive } = Astro.props;
+---
+
+<a class={`p-3 ${isActive ? 'font-semibold' : 'font-normal'} hover:underline`} href={href}
+  ><slot /></a
+>
