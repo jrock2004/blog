@@ -3,31 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --theme-text: #636370;
+  --theme-heading: #33333d;
+  --theme-hr: #dddde7;
+  --theme-layer1: #f6f6fa;
+  --theme-layer2: #ffffff;
+  --theme-layer3: #f6f6fa;
+  --theme-muted1: #efeff3;
+  --theme-muted2: #e1e1ea;
+  --theme-muted3: #dddde7;
+  --theme-primary: #2563eb;
+  --theme-primary-accent: #1e40af;
+  --theme-secondary: #626270;
+  --theme-secondary-accent: #51515f;
+  --theme-critical: #dc2626;
+  --theme-critical-accent: #991b1b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    --theme-text: #abadc6;
+    --theme-heading: #ffffff;
+    --theme-hr: #323855;
+    --theme-layer1: #1a1d2d;
+    --theme-layer2: #1e2235;
+    --theme-layer3: #252a41;
+    --theme-muted1: #252a41;
+    --theme-muted2: #323855;
+    --theme-muted3: #424867;
+    --theme-primary: #2563eb;
+    --theme-primary-accent: #1e40af;
+    --theme-secondary: #424867;
+    --theme-secondary-accent: #303650;
+    --theme-critical: #dc2626;
+    --theme-critical-accent: #991b1b;
   }
 }
