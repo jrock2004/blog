@@ -1,8 +1,8 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
-image: "./salty_egg.jpg"
+date: '2015-05-01T22:12:03.284Z'
+description: 'Hello World'
+image: './salty_egg.jpg'
 tags:
   - testpost
   - anothertest
@@ -23,12 +23,12 @@ Oh, and here's a great quote from this Wikipedia on
 > salted duck eggs have a briny aroma, a gelatin-like egg white and a
 > firm-textured, round yolk that is bright orange-red in color.
 
-![Chinese Salty Egg](./salty_egg.jpg)
+![Chinese Salty Egg](/images/blog/salty_egg.jpg)
 
 You can also write code blocks here!
 
 ```js
-const saltyDuckEgg = "chinese preserved food product"
+const saltyDuckEgg = 'chinese preserved food product';
 ```
 
 | Number | Title                                    | Year |
@@ -194,13 +194,13 @@ Paragraph:
 
     ---------------------------------------
 
-This is [an example](http://example.com "Example") link.
+This is [an example](http://example.com 'Example') link.
 
 [This link](http://example.com) has no title attr.
 
 This is [an example][id] reference-style link.
 
-[id]: http://example.com "Optional Title"
+[id]: http://example.com 'Optional Title'
 
     This is [an example](http://example.com "Example") link.
 
@@ -230,7 +230,7 @@ This paragraph has some `code` in it.
 
     This paragraph has some `code` in it.
 
-![Alt Text](https://via.placeholder.com/200x50 "Image Title")
+![Alt Text](https://via.placeholder.com/200x50 'Image Title')
 
     ![Alt Text](https://via.placeholder.com/200x50 "Image Title")
 
@@ -238,8 +238,8 @@ This paragraph has some `code` in it.
 posts: [
   {
     id: 1,
-    title: "This is my first post",
-    body: "Some description would go here",
+    title: 'This is my first post',
+    body: 'Some description would go here',
   },
-]
+];
 ```

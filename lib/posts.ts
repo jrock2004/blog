@@ -45,3 +45,20 @@ export async function getSortedPostsData() {
     }
   });
 }
+
+export async function getBlogPostData(id: string) {
+  const fullPath = path.join(postsDirectory, id, 'index.md');
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const matterResult = typedMatter<IPostData>(fileContents);
+  const content = matterResult.content;
+  const excerptDefault = content.slice(0, 200);
+  const processedContent = await remark().use(html).process(matterResult.content);
+  const contentHtml = await processedContent.toString();
+
+  return {
+    excerpt: matterResult.excerpt !== '' ? matterResult.excerpt : excerptDefault,
+    content: contentHtml,
+    id,
+    ...matterResult.data,
+  };
+}

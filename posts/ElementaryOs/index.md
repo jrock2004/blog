@@ -1,7 +1,7 @@
 ---
-title: "Elementary OS"
-image: "./elem-os-terminal.jpg"
-date: "2016-11-04"
+title: 'Elementary OS'
+image: './elem-os-terminal.jpg'
+date: '2016-11-04'
 tags:
   - linux
 ---
@@ -20,7 +20,7 @@ Got to say after logging in, I really liked the look. You can instantly tell tha
 
 I really like the font and theme of the terminal application.
 
-![Terminal on Elementary OS](./elem-os-terminal.jpg)
+![Terminal on Elementary OS](/images/blog/elem-os-terminal.jpg)
 
 ## The Ugly
 

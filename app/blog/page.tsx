@@ -15,10 +15,20 @@ export default async function Blog() {
         {allPostsData.map((post) => {
           const blogImage = post.image === undefined ? undefined : post.image;
 
+          console.log(post.id);
+
+          if (post.id === 'MySwitchToNeovim') {
+            console.log(post);
+          }
+
           return (
-            <Link key={post.id} href={`/blog/${post.id}`}>
+            <Link key={post.id} href={`/blog/${post.id}`} className="block">
               <Post imgAlt={post.title} blogImage={blogImage} title={post.title}>
-                {post.excerpt}
+                {post.excerpt ? (
+                  <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+                ) : (
+                  post.excerpt
+                )}
               </Post>
             </Link>
           );

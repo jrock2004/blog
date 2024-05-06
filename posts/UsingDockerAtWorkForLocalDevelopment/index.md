@@ -1,7 +1,7 @@
 ---
-title: "Using Docker at Work for Local Development"
+title: 'Using Docker at Work for Local Development'
 image: ./docker.jpg
-date: "2018-06-18"
+date: '2018-06-18'
 tags:
   - docker
   - apple
@@ -11,7 +11,7 @@ tags:
 
 At the company I work for we wanted to setup [Docker](https://www.docker.com/) so local developers do not have to do all this work to get their machines configured for any projects. We also wanted to get away from have documentation for different developer laptops. We use Macs, Linux, and Windows machines. So now I have decided to go down the path of learning how to set this up and get this working for everyone.
 
-![Docker whale](/docker.jpg)
+![Docker whale](/images/blog/docker.jpg)
 
 Before I started learning, what I thought what we were eventually going to get is, one set of files that would work no matter what operating system our devs were using. So then I started research about Docker. I started by going through Docker's documentation. I took a course in [Pluralsight](https://www.pluralsight.com/) about it. Then I started searching YouTube for Docker talks to get me in understanding the basics. I still have way more things to learn but I feel like I am going down the right path.
 

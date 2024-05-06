@@ -1,13 +1,13 @@
 ---
-title: "M1 Mac Reinstall"
-date: "2021-08-29"
+title: 'M1 Mac Reinstall'
+date: '2021-08-29'
 tags:
   - apple
 ---
 
 So as I always like to do every once in awhile, I decided to re-install my M1 Mac Mini and oh man the troubles I had were just ridiculous.
 
-![Example of the error I see](account-creation-failure.jpg)
+![Example of the error I see](/images/blog/account-creation-failure.jpg)
 
 ## Need Internet Access to Create Local Account
 
