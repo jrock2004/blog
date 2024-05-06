@@ -55,10 +55,14 @@ export async function getBlogPostData(id: string) {
   const processedContent = await remark().use(html).process(matterResult.content);
   const contentHtml = await processedContent.toString();
 
+  // from contentHtml, pull out all the code blocks and add them to the code block component
+  const codeBlocks = contentHtml.match(/<pre><code[\s\S]*?<\/code><\/pre>/g);
+
   return {
     excerpt: matterResult.excerpt !== '' ? matterResult.excerpt : excerptDefault,
     content: contentHtml,
     id,
+    hasCodeBlocks: codeBlocks !== null && codeBlocks.length > 0,
     ...matterResult.data,
   };
 }
