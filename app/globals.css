@@ -3,39 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --theme-text: #636370;
-  --theme-heading: #33333d;
-  --theme-hr: #dddde7;
-  --theme-layer1: #f6f6fa;
-  --theme-layer2: #ffffff;
-  --theme-layer3: #f6f6fa;
-  --theme-muted1: #efeff3;
-  --theme-muted2: #e1e1ea;
-  --theme-muted3: #dddde7;
-  --theme-primary: #2563eb;
-  --theme-primary-accent: #1e40af;
-  --theme-secondary: #626270;
-  --theme-secondary-accent: #51515f;
-  --theme-critical: #dc2626;
-  --theme-critical-accent: #991b1b;
+  /* Gradient Colors */
+  --gradient-peach-from: #fb923c;
+  --gradient-peach-to: #fb7185;
+  --gradient-sky-from: #0ea5e9;
+  --gradient-sky-to: #7dd3fc;
+  --gradient-lime-from: #a3e635;
+  --gradient-lime-to: #86efac;
+  --gradient-dusk-from: #8b5cf6;
+  --gradient-dusk-to: #fca5a5;
+  --gradient-cotton-candy-from: #60a5fa;
+  --gradient-cotton-candy-to: #a78bfa;
+  --gradient-wild-apple-from: #bb7aa5;
+  --gradient-wild-apple-to: #fcd34d;
+  --gradient-fresh-mint-from: #00cdac;
+  --gradient-fresh-mint-to: #34d399;
+  --gradient-grape-gummy-from: #fb923c;
+  --gradient-grape-gummy-to: #8b5cf6;
+  --gradient-grape-gummy-via: #b572cc;
+
+  /* Theme Colors */
+  --color-text: 99 99 112;
+  --color-heading: 51 51 61;
+  --color-hr: 221 221 231;
+  --color-layer-0: 255 255 255;
+  --color-layer-1: 246 246 250;
+  --color-layer-2: 255 255 255;
+  --color-layer-3: 246 246 250;
+  --color-muted-1: 239 239 243;
+  --color-muted-2: 225 225 234;
+  --color-muted-3: 221 221 231;
+  --color-primary: 37 100 235;
+  --color-primary-accent: 30 64 175;
+  --color-critical: 220 38 38;
+  --color-critical-accent: 153 27 27;
+  --color-secondary: 98 98 112;
+  --color-secondary-accent: 81 81 95;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-text: #abadc6;
-    --theme-heading: #ffffff;
-    --theme-hr: #323855;
-    --theme-layer1: #1a1d2d;
-    --theme-layer2: #1e2235;
-    --theme-layer3: #252a41;
-    --theme-muted1: #252a41;
-    --theme-muted2: #323855;
-    --theme-muted3: #424867;
-    --theme-primary: #2563eb;
-    --theme-primary-accent: #1e40af;
-    --theme-secondary: #424867;
-    --theme-secondary-accent: #303650;
-    --theme-critical: #dc2626;
-    --theme-critical-accent: #991b1b;
+    /* Theme Colors */
+    --color-text: 171 173 198;
+    --color-heading: 255 255 255;
+    --color-hr: 50 56 85;
+    --color-layer-0: 21 24 37;
+    --color-layer-1: 26 29 45;
+    --color-layer-2: 30 34 53;
+    --color-layer-3: 37 42 65;
+    --color-muted-1: 37 42 65;
+    --color-muted-2: 50 56 85;
+    --color-muted-3: 66 72 103;
+    --color-primary: 37 100 235;
+    --color-primary-accent: 30 64 175;
+    --color-critical: 220 38 38;
+    --color-critical-accent: 153 27 27;
+    --color-secondary: 66 72 103;
+    --color-secondary-accent: 48 54 80;
   }
 }
