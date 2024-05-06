@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import developerCode from '@/assets/images/developer-code.jpg';
 import Post from '@/components/Post';
 
