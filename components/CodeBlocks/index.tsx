@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 
@@ -12,5 +12,5 @@ export function CodeBlocks({ children }: CodeBlocksProps) {
 }
 
 export interface CodeBlocksProps {
-  children: ReactNode;
+  children: string;
 }
