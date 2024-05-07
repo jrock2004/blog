@@ -6,11 +6,36 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+export interface IPost {
+  prevId: string;
+  prevTitle: string;
+  nextId: string;
+  nextTitle: string;
+  hasCodeBlocks: boolean;
+  excerpt?: string;
+  content: string;
+  id: string;
+  title: string;
+  image?: string;
+  date: string;
+  tags: Array<string>;
+}
+
+export type IMatterPost = {
+  excerpt?: string;
+  content: string;
+  id: string;
+  title: string;
+  image?: string;
+  date: string;
+  tags: Array<string>;
+};
+
 export type IPostData = {
   title: string;
   date: string;
   image?: string;
-  tags: string[];
+  tags: Array<string>;
 };
 
 export async function getSortedPostsData() {
@@ -47,22 +72,37 @@ export async function getSortedPostsData() {
 }
 
 export async function getBlogPostData(id: string) {
-  const fullPath = path.join(postsDirectory, id, 'index.md');
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const matterResult = typedMatter<IPostData>(fileContents);
-  const content = matterResult.content;
-  const excerptDefault = content.slice(0, 200);
-  const processedContent = await remark().use(html).process(matterResult.content);
-  const contentHtml = await processedContent.toString();
+  const allPostsData = await getSortedPostsData();
+  const allPosts = allPostsData as IMatterPost[];
 
-  // from contentHtml, pull out all the code blocks and add them to the code block component
-  const codeBlocks = contentHtml.match(/<pre><code[\s\S]*?<\/code><\/pre>/g);
+  const current: IMatterPost = allPosts.find((post) => post.id === id) || {
+    content: '',
+    date: '',
+    id: '',
+    title: '',
+    tags: [],
+  };
+  let prevId = '';
+  let prevTitle = '';
+  let nextId = '';
+  let nextTitle = '';
+
+  if (current) {
+    prevId = allPosts[allPosts.indexOf(current) - 1]?.id || allPosts[allPosts.length - 1]?.id;
+    prevTitle =
+      allPosts[allPosts.indexOf(current) - 1]?.title || allPosts[allPosts.length - 1]?.title;
+    nextId = allPosts[allPosts.indexOf(current) + 1]?.id || allPosts[0]?.id;
+    nextTitle = allPosts[allPosts.indexOf(current) + 1]?.title || allPosts[0]?.title;
+  }
+
+  const codeBlocks = current?.content.match(/<pre><code[\s\S]*?<\/code><\/pre>/g);
 
   return {
-    excerpt: matterResult.excerpt !== '' ? matterResult.excerpt : excerptDefault,
-    content: contentHtml,
-    id,
-    hasCodeBlocks: codeBlocks !== null && codeBlocks.length > 0,
-    ...matterResult.data,
+    prevId,
+    prevTitle,
+    nextId,
+    nextTitle,
+    hasCodeBlocks: codeBlocks !== null && codeBlocks !== undefined && codeBlocks.length > 0,
+    ...current,
   };
 }

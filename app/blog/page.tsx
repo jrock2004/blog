@@ -17,7 +17,7 @@ export default async function Blog() {
 
           return (
             <Link key={post.id} href={`/blog/${post.id}`} className="block">
-              <Post imgAlt={post.title} blogImage={blogImage} title={post.title}>
+              <Post imgAlt={post.title} blogImage={blogImage} post={post}>
                 {post.excerpt ? (
                   <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
                 ) : (
