@@ -106,37 +106,6 @@
   @apply mb-4 rounded-lg border-l-8 border-gray-300 bg-gray-100 p-4 leading-relaxed shadow;
 }
 
-.blog-post-content table {
-  @apply table-auto;
-  @apply mb-4;
-  @apply overflow-hidden;
-}
-
-.blog-post-content table thead tr {
-  @apply bg-gray-100;
-}
-
-.blog-post-content table thead tr th {
-  @apply px-4;
-  @apply py-2;
-  @apply border-gray-300;
-  @apply font-semibold;
-  @apply text-gray-700;
-  @apply text-sm;
-}
-
-.blog-post-content table tbody tr {
-  @apply border-b;
-}
-
-.blog-post-content table tbody tr td {
-  @apply px-4;
-  @apply py-2;
-  @apply border-gray-300;
-  @apply text-gray-700;
-  @apply text-sm;
-}
-
 .blog-post-content hr {
   @apply mb-4 border-b-2 border-gray-300;
 }
