@@ -17,7 +17,7 @@ export default function NavBar() {
   };
 
   const mobileMenuClasses = menuOpen
-    ? 'absolute top-0 bottom-0 left-0 flex bg-white flex-col w-3/4 pt-20 z-10 dark:bg-layer1 dark:border-r dark:border-r-muted2'
+    ? 'absolute top-0 bottom-0 left-0 flex bg-white flex-col w-full pt-20 z-10 dark:bg-layer1 dark:border-r dark:border-r-muted2'
     : 'hidden';
 
   return (
